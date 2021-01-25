@@ -1,0 +1,62 @@
+.modal_wrapper {
+  position: absolute;
+  width: 60%;
+  height: 425px;
+  background-color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20%);
+}
+
+.close_btn {
+  align-self: flex-end;
+  width: 21px;
+  height: 21px;
+  position: relative;
+  cursor: pointer;
+}
+
+.close_btn span {
+  position: absolute;
+  width: 25.46px;
+  height: 0px;
+  border: 1px solid #000000;
+  transform: rotate(-45deg);
+}
+
+.close_btn span:first-child {
+  transform: rotate(45deg);
+}
+
+.image_and_form {
+  width: 50%;
+  height: 130px;
+}
+
+.image {
+  width: 100%;
+  height: 205px;
+  margin-bottom: 30px;
+}
+
+input {
+  height: 30px;
+  border: none;
+  margin-bottom: 20px;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+button {
+  height: 30px;
+  background: #4997D0;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.comments {
+  width: 50%;
+}

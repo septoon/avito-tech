@@ -1,0 +1,22 @@
+.content_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+
+.image_wrapper {
+  width: 32%;
+  margin-bottom: 20px;
+}
+.image {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .image_wrapper {
+    width: 90%;
+  }
+}
