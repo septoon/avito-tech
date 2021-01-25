@@ -1,8 +1,10 @@
 import {  combineReducers, createStore } from 'redux'
 import contentReducer from './content-reducer'
+import { reducer as formReducer } from 'redux-form'
 
 let reducers = combineReducers({
-    content: contentReducer
+    content: contentReducer,
+    form: formReducer
 })
 
 const store = createStore(reducers)

@@ -1,0 +1,12 @@
+.comment_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  color: #999999;
+}
+
+.comments_wrapper {
+  overflow: auto;
+}

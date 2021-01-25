@@ -1,35 +1,34 @@
 import React from 'react';
-import classes from './Form.module.css'
-import { reduxForm } from 'redux-form'
+import classes from '../ModalWindow.module.css'
+import { reset, reduxForm, Field } from 'redux-form'
 
-const Form = props => {
+const CommentsForm = props => {
   return (
     <form className={classes.form} onSubmit={props.handleSubmit} >
-      <input placeholder={'Ваше имя'} name={'name'} />
-      <input placeholder={'Ваш комментарий'} name={'comment'} />
+      <Field placeholder={'Ваше имя'} name={'name'} component='input' />
+      <Field placeholder={'Ваш комментарий'} name={'comment'} component='input' />
       <button>Оставить комментарий</button>
     </form>
   )
 }
 
-const ReduxForm = reduxForm({ form: 'form' }) (Form)
+const ReduxForm = reduxForm({ form: 'form' }) (CommentsForm)
 
-export default ReduxForm
+const Form = props => {
+  const date = new Date()
+  const day = date.getDate()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  const currentDate = `${day}.${month}.${year}`
+  let setComment = (value) => {
+    props.addComment(currentDate, value.comment)
+  }
 
+  return (
+    <div className={classes.form_wrapper}>
+      <ReduxForm onSubmit={setComment} />
+    </div>
+  )
+}
 
-
-// const Login = (props) => {
-//     const submitFormData = formData => {
-//         let {email, password, rememberMe} = formData
-//         props.login(email, password, rememberMe)
-//         console.log(formData)
-//     }
-
-//     if(props.isAuth) return <Redirect to='/profile' />
-//     return (
-//         <div>
-//             <h1>Login</h1>
-//             <LoginReduxForm onSubmit={submitFormData} />
-//         </div>
-//     )
-// }
+export default Form

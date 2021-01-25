@@ -1,12 +1,12 @@
 .modal_wrapper {
   position: absolute;
   width: 60%;
-  height: 425px;
+  height: 525px;
   background-color: #fff;
   padding: 30px;
   display: flex;
   flex-direction: column;
-  transform: translateY(20%);
+  transform: translateY(15%);
 }
 
 .close_btn {
@@ -29,15 +29,26 @@
   transform: rotate(45deg);
 }
 
+.modal {
+  height: 100%;
+  display: flex;
+}
+
 .image_and_form {
   width: 50%;
-  height: 130px;
+  height: 100%;
 }
 
 .image {
   width: 100%;
-  height: 205px;
   margin-bottom: 30px;
+}
+
+.form {
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -55,8 +66,91 @@ button {
   color: #fff;
   border: none;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+button:focus,
+input:focus {
+  outline: none;
 }
 
 .comments {
   width: 50%;
+  padding-left: 10%;
+}
+
+@media (max-width: 500px) {
+  .modal_wrapper {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateY(0);
+    padding: 0;
+  }
+  
+  .close_btn {
+    align-self: flex-end;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .close_btn span {
+    position: absolute;
+    width: 25.46px;
+    height: 0px;
+    border: 1px solid #000000;
+    transform: rotate(-45deg);
+  }
+  
+  .modal {
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  .image_and_form {
+    width: 100%;
+    height: 65%;
+  }
+  
+  .image {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .form {
+    align-items: center;
+  }
+  
+  input {
+    width: 90%;
+    height: 30px;
+    border: none;
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+  
+  button {
+    width: 90%;
+    height: 30px;
+    background: #4997D0;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:focus,
+  input:focus {
+    outline: none;
+  }
+  
+  .comments {
+    width: 100%;
+    height: 35%;
+  } 
 }
